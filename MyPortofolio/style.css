@@ -1,0 +1,537 @@
+/* General Body & Container */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header & Hero Section */
+header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative; /* Untuk positioning profile-img */
+    overflow: hidden; /* Clear floats */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    border: 5px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+header h1 {
+    margin-top: 15px;
+    font-size: 2.8em;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.tagline {
+    font-size: 1.4em;
+    margin-bottom: 25px;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.contact-item {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+
+.contact-item i {
+    font-size: 1.2em;
+}
+
+.contact-item:hover {
+    color: #a7d9ed; /* Slightly lighter blue on hover */
+}
+
+
+/* Navigation Bar */
+nav {
+    background-color: #2a5298; /* Darker blue, matching header gradient */
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px; /* Increased gap for better spacing */
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+
+/* Sections */
+section {
+    padding: 60px 0;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    color: #1e3c72; /* Dark blue for titles */
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #2a5298; /* Matching blue underline */
+    border-radius: 2px;
+}
+
+
+/* About Section */
+#about .about-content {
+    display: flex;
+    flex-direction: column; /* Selalu kolom agar deskripsi di atas statistik */
+    gap: 30px; /* Jarak antara deskripsi dan statistik */
+    align-items: center; /* Untuk memusatkan .about-text dan .about-stats sebagai blok */
+}
+
+#about .about-text {
+    max-width: 800px; /* Batasi lebar deskripsi agar tidak terlalu panjang */
+    margin: 0 auto; /* Tengahin deskripsi */
+    text-align: left; /* Teks deskripsi kembali rata kiri */
+    padding: 0 15px; /* Sedikit padding di samping */
+    width: 100%; /* Pastikan ini mengambil lebar penuh container */
+}
+
+#about .about-text p {
+    margin-bottom: 15px; /* Jarak antar paragraf */
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #444; /* Disesuaikan dengan body color */
+    text-align: justify; /* UBAH KE INI UNTUK RATA KIRI-KANAN */
+}
+
+.about-stats {
+    display: flex; /* Ubah ke flexbox agar lebih fleksibel */
+    flex-wrap: wrap; /* Izinkan wrap ke baris baru */
+    justify-content: center; /* Pusatkan kartu statistik */
+    gap: 20px; /* Jarak antar kartu */
+    width: 100%; /* Ambil lebar penuh container */
+    max-width: 900px; /* Batasi lebar total group statistik */
+    margin-top: 20px; /* Jarak dari deskripsi di atasnya */
+}
+
+.stat-card {
+    background-color: #eef2f5;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 200px; /* Fleksibel, minimal 200px */
+    min-width: 180px; /* Minimal width untuk stat card */
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.stat-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #2a5298;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9em;
+    color: #555;
+}
+
+
+/* Experience Section */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.experience-card {
+    background-color: #fefefe;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.exp-title {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #1e3c72;
+}
+
+.exp-company {
+    font-size: 1em;
+    color: #555;
+    margin-top: 5px;
+}
+
+.exp-period {
+    font-size: 0.95em;
+    color: #777;
+    font-weight: 500;
+    white-space: nowrap; /* Prevent line break on period */
+}
+
+.exp-description ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 0;
+    color: #444;
+}
+
+.exp-description li {
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+
+/* Skills Section */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.skill-category {
+    background-color: #fefefe;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.skill-category h3 {
+    font-size: 1.5em;
+    color: #2a5298;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill-category h3 i {
+    font-size: 1.3em;
+    color: #1e3c72;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tag {
+    background-color: #eef2f5;
+    color: #1e3c72;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    border: 1px solid #d0dbe4;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.skill-tag:hover {
+    background-color: #d0dbe4;
+    color: #1a305e;
+}
+
+
+/* Education Section */
+.education-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Timeline line */
+.education-timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #2a5298;
+    top: 0;
+    bottom: 0;
+    left: 20px; /* Adjust based on your design */
+    margin-left: -2px;
+    border-radius: 2px;
+}
+
+.education-item {
+    margin-bottom: 40px;
+    position: relative;
+    padding-left: 60px; /* Space for the circle */
+}
+
+/* Timeline circle */
+.education-item::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #1e3c72;
+    border: 4px solid #f4f7f6;
+    top: 5px;
+    left: 10px; /* Position relative to the line */
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 0 2px #2a5298; /* Outer glow */
+}
+
+.education-content {
+    background-color: #fefefe;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.education-period {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.education-school {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #2a5298;
+    margin-bottom: 5px;
+}
+
+.education-degree {
+    font-size: 1.1em;
+    color: #444;
+}
+
+/* Footer */
+footer {
+    background-color: #1e3c72; /* Dark blue, matching header */
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+.footer-content {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-link {
+    color: #fff;
+    font-size: 1.8em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+    color: #a7d9ed; /* Lighter blue on hover */
+    transform: translateY(-3px);
+}
+
+footer p {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+    .tagline {
+        font-size: 1.2em;
+    }
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .nav-link {
+        padding: 10px;
+    }
+    .section-title {
+        font-size: 2em;
+    }
+    /* #about .about-content media query for row is removed */
+    .about-stats {
+        gap: 15px; /* Kurangi gap di mobile */
+    }
+    .stat-card {
+        flex: 1 1 45%; /* Dua kartu per baris di layar medium */
+        min-width: unset; /* Reset min-width agar lebih fleksibel */
+    }
+    .experience-grid, .skills-container {
+        grid-template-columns: 1fr; /* Stack cards on small screens */
+    }
+    .education-item {
+        padding-left: 40px; /* Adjust for smaller screens */
+    }
+    .education-item::before {
+        left: 10px; /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-card {
+        flex: 1 1 100%; /* Satu kartu per baris di layar kecil */
+    }
+}
+
+
+/* NEW: Animation CSS */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.delay-1 { transition-delay: 0.1s; }
+.animate-on-scroll.delay-2 { transition-delay: 0.2s; }
+.animate-on-scroll.delay-3 { transition-delay: 0.3s; }
+.animate-on-scroll.delay-4 { transition-delay: 0.4s; }
+.animate-on-scroll.delay-5 { transition-delay: 0.5s; } /* Added for more granular delay */
+
+
+/* When element is in view, apply animated state */
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* CSS for blinking cursor (for typewriter effect) */
+.tagline::after {
+    content: '|';
+    animation: blink-caret 0.75s step-end infinite;
+    font-weight: normal;
+    margin-left: 2px;
+}
+
+.tagline.finished-typing::after {
+    animation: none;
+    opacity: 0; /* Hide cursor after typing is finished if you don't want it to blink forever */
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #fff; } /* Change to your text color or white for visibility */
+}
