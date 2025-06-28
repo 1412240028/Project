@@ -1,0 +1,12 @@
+[
+    {
+        "productCode": "5",
+        "productName": "Tempe",
+        "quantity": "10",
+        "total": 10000,
+        "payment": 10000,
+        "change": 0,
+        "timestamp": "2025-06-28T12:19:06.541781",
+        "id": 1
+    }
+]
