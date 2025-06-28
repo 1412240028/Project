@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasir UD. ANUGRAH - Modern & Kece</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+
+    <div class="container fade-in">
+        <header class="card header-card">
+            <h1>Pabrik Tahu & Tempe Tegalbang</h1>
+            <h2>(UD. ANUGRAH)</h2>
+            <p class="tagline">Kualitas Terjamin, Harga Bersahabat!</p>
+        </header>
+
+        <main>
+            <section class="product-list card slide-up">
+                <h3><i class="fas fa-box-open"></i> DAFTAR BARANG & HARGA:</h3>
+                <div class="product-grid">
+                    <div class="product-item" data-code="1" data-price="500">
+                        <span class="product-name">Tahu Mateng (Kecil)</span>
+                        <span class="product-price">Rp. 500/biji</span>
+                    </div>
+                    <div class="product-item" data-code="2" data-price="500">
+                        <span class="product-name">Tahu Mentah (Kecil)</span>
+                        <span class="product-price">Rp. 500/biji</span>
+                    </div>
+                    <div class="product-item" data-code="3" data-price="700">
+                        <span class="product-name">Tahu Mateng (Besar)</span>
+                        <span class="product-price">Rp. 700/biji</span>
+                    </div>
+                    <div class="product-item" data-code="4" data-price="700">
+                        <span class="product-name">Tahu Mentah (Besar)</span>
+                        <span class="product-price">Rp. 700/biji</span>
+                    </div>
+                    <div class="product-item" data-code="5" data-price="1000">
+                        <span class="product-name">Tempe</span>
+                        <span class="product-price">Rp. 1000/buah</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="transaction-form card slide-up delay-1">
+                <h3><i class="fas fa-cash-register"></i> Form Transaksi:</h3>
+                <form id="transactionForm">
+                    <div class="form-group">
+                        <label for="productCode">Pilih Produk (Kode):</label>
+                        <input type="number" id="productCode" name="productCode" min="1" max="5" placeholder="Masukkan kode produk" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantity">Jumlah:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" placeholder="Berapa banyak?" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-calculator"></i> Hitung Total</button>
+                    <button type="button" class="btn btn-secondary" id="resetBtn"><i class="fas fa-redo"></i> Reset</button>
+                </form>
+
+                <div id="result" class="result-card hidden">
+                    <h4>Detail Transaksi:</h4>
+                    <p>Total Harga: <span id="totalPrice">Rp. 0</span></p>
+                    <div class="form-group">
+                        <label for="payment">Dibayar:</label>
+                        <input type="number" id="payment" name="payment" min="0" placeholder="Masukkan jumlah bayar">
+                    </div>
+                    <button type="button" class="btn btn-success" id="calculateChangeBtn"><i class="fas fa-wallet"></i> Hitung Kembalian</button>
+                    <p class="final-result">Kembalian: <span id="change">Rp. 0</span></p>
+                    <button type="button" class="btn btn-info mt-2" id="newTransactionBtn">Transaksi Baru <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </section>
+
+            <section class="transaction-history card slide-up delay-2">
+                <h3><i class="fas fa-history"></i> Riwayat Transaksi:</h3>
+                <div id="historyList" class="history-list">
+                    <p class="no-history-message">Belum ada transaksi.</p>
+                </div>
+                <button type="button" class="btn btn-danger clear-history-btn" id="clearHistoryBtn"><i class="fas fa-trash"></i> Bersihkan Riwayat</button>
+            </section>
+        </main>
+
+        <footer class="fade-in delay-3"> <p>&copy; 2025 UD. ANUGRAH. <br>Terima Kasih, Sudah Berbelanja.... <i class="fas fa-heart"></i></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
